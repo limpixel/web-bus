@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!-- pesanTiket.xhtml -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+  <head>
+    <title>Pemesanan Tiket</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto h-screen flex items-center">
+      <!-- Bagian Kiri: Gambar Bus -->
+      <div class="w-1/2">
+        <img src="https://images.pexels.com/photos/3829175/pexels-photo-3829175.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Bus" class="w-full h-auto object-cover" />
+      </div>
+
+      <!-- Bagian Kanan: Form Pemesanan -->
+      <div class="w-1/2 text-right p-10 bg-white rounded-lg shadow-lg">
+        <h1 class="text-4xl font-bold text-blue-800 mb-8">Pesan Tiket Bus</h1>
+        
+        <h:form>
+          <div class="text-left space-y-4">
+            <label for="nama" class="block font-bold">Nama Lengkap:</label>
+            <h:inputText id="nama" value="#{ticketBean.namaLengkap}" class="border rounded py-2 px-4 w-full" />
+
+            <label for="kotaAwal" class="block font-bold">Kota Awal:</label>
+            <h:inputText id="kotaAwal" value="#{ticketBean.kotaAwal}" class="border rounded py-2 px-4 w-full" />
+
+            <label for="kotaTujuan" class="block font-bold">Kota Tujuan:</label>
+            <h:inputText id="kotaTujuan" value="#{ticketBean.kotaTujuan}" class="border rounded py-2 px-4 w-full" />
+
+            <label for="kelas" class="block font-bold">Kelas:</label>
+            <h:selectOneMenu id="kelas" value="#{ticketBean.kelas}" class="border rounded py-2 px-4 w-full">
+                <f:selectItem itemLabel="Biasa" itemValue="Biasa" />
+              <f:selectItem itemLabel="Bisnis" itemValue="Bisnis" />
+            </h:selectOneMenu>
+
+            <label for="tanggal" class="block font-bold">Tanggal Keberangkatan:</label>
+            <h:inputText id="tanggal" value="#{ticketBean.tanggalKeberangkatan}" class="border rounded py-2 px-4 w-full">
+              <f:passThroughAttribute name="type" value="date" />
+            </h:inputText>
+
+            <label for="metodePembayaran" class="block font-bold">Metode Pembayaran:</label>
+            <h:selectOneMenu id="metodePembayaran" value="#{ticketBean.metodePembayaran}" class="border rounded py-2 px-4 w-full">
+              <f:selectItem itemLabel="QRIS" itemValue="QRIS" />
+              <f:selectItem itemLabel="Kartu Debit" itemValue="Debit" />
+              <f:selectItem itemLabel="Kartu Kredit" itemValue="Kredit" />
+            </h:selectOneMenu>
+
+            <!-- Tombol Submit -->
+            <h:commandButton value="Pesan Tiket" action="#{ticketBean.pesanTiket}" class="bg-blue-500 text-white py-3 px-8 rounded shadow-md hover:bg-blue-700 transition-all" />
+          </div>
+        </h:form>
+      </div>
+    </div>
+  </body>
+</html>

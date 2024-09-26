@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+  <head>
+    <title>Konfirmasi Tiket</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container mx-auto mt-10">
+      <h1 class="text-3xl font-bold mb-5">Konfirmasi Tiket</h1>
+      <h:form>
+        <p>Nama: #{ticketBean.nama}</p>
+        <p>Kota Awal: #{ticketBean.kotaAwal}</p>
+        <p>Kota Tujuan: #{ticketBean.kotaTujuan}</p>
+        <p>Kelas: #{ticketBean.kelas}</p>
+        <p>Tanggal Keberangkatan: #{ticketBean.tanggalKeberangkatan}</p>
+        <p>Metode Pembayaran: #{ticketBean.metodePembayaran}</p>
+
+        <h:commandButton value="Download Tiket (PDF)" action="#{ticketBean.downloadPdf}" class="bg-green-500 text-white py-2 px-4 rounded" />
+      </h:form>
+    </div>
+  </body>
+</html>
+

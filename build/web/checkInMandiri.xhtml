@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!-- checkInMandiri.xhtml -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+  <head>
+    <title>Check In Mandiri</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto h-screen flex items-center">
+      <!-- Bagian Kiri: Gambar Bus -->
+      <div class="w-1/2">
+        <img src="https://images.pexels.com/photos/3829175/pexels-photo-3829175.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="Bus" class="w-full h-auto object-cover" />
+      </div>
+
+      <!-- Bagian Kanan: Form Check In -->
+      <div class="w-1/2 text-right p-10 bg-white rounded-lg shadow-lg">
+        <h1 class="text-4xl font-bold text-blue-800 mb-8">Check In Mandiri</h1>
+        
+        <h:form>
+          <div class="text-left space-y-4">
+            <label for="kodeTiket" class="block font-bold">Kode Tiket:</label>
+            <h:inputText id="kodeTiket" value="#{checkInBean.kodeTiket}" class="border rounded py-2 px-4 w-full" />
+
+            <label for="namaTiket" class="block font-bold">Nama Sesuai Tiket:</label>
+            <h:inputText id="namaTiket" value="#{checkInBean.namaTiket}" class="border rounded py-2 px-4 w-full" />
+
+            <!-- Tombol Submit -->
+            <h:commandButton value="Proses Check In" action="#{checkInBean.prosesCheckIn}" class="bg-green-500 text-white py-3 px-8 rounded shadow-md hover:bg-green-700 transition-all" />
+
+            <!-- Tombol Download PDF -->
+            <h:commandButton value="Download Tiket PDF" action="#{checkInBean.downloadTiket}" class="bg-blue-500 text-white py-3 px-8 rounded shadow-md hover:bg-blue-700 transition-all mt-4" />
+          </div>
+        </h:form>
+      </div>
+    </div>
+  </body>
+</html>
